@@ -31,7 +31,7 @@ t_RPAREN = r'\)'
 t_SQUOTE = r'\''
 t_DQUOTE = r'\"'
 t_UNDERSCORE = r'\_'
-t_DASH = ur'-|\–|%s' % u'\u2013'
+t_DASH = r'-|\–|%s' % u'\u2013'
 t_BANG = r'\!'
 t_HASH = r'\#'
 t_PERCENT = r'\%'
@@ -55,7 +55,7 @@ def t_newline(t):
 
 
 def t_error(t):
-    print >>sys.stderr, ("Illegal character '%s'" % t.value[0])
+    print("Illegal character '%s'" % t.value[0])
     t.lexer.skip(1)
 
 

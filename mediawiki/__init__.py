@@ -3,7 +3,7 @@ import copy
 import logging
 import traceback
 import urllib
-import urlparse
+from urllib.parse import urlparse
 import sys
 
 import requests
@@ -90,9 +90,9 @@ class Wiki(object):
             else:
                 return None
         except UnicodeError as e:
-            print e
-            print traceback.format_exc()
-            print >>sys.stderr, "Unicode error"
+            print (e)
+            print (traceback.format_exc())
+            #print >>sys.stderr, "Unicode error"
             return None
 
     def iterarticles(self, start=None):
