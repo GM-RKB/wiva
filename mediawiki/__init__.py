@@ -18,7 +18,7 @@ def str2hex(s):
 
 class Url(object):
     def __init__(self, url):
-        parsed_url = urlparse.urlparse(url)
+        parsed_url = urlparse(url)
         page = parsed_url.path
         self.has_wiki_prefix = page.startswith('/wiki/')
         if self.has_wiki_prefix:
