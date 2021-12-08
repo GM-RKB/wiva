@@ -45,21 +45,21 @@ def cli(arguments):
                         result.update(article_result)
                     else:
                         if article_result:
-                            print article_result
+                            print (article_result)
                 except UnicodeEncodeError:
                     continue
         except KeyboardInterrupt:
             pass
         finally:
             if generate_json:
-                print pretty_json({wiki.url.host: result})
+                print (pretty_json({wiki.url.host: result}))
     else:
 
         if generate_json:
             article_dict = process_article(Article(arguments['<url>']), output='dict')
-            print pretty_json(article_dict)
+            print (pretty_json(article_dict))
         else:
-            print process_article(Article(arguments['<url>']))
+            print (process_article(Article(arguments['<url>'])))
 
 
 def pretty_json(article_dict):
@@ -71,7 +71,7 @@ def process_article(article, processed_count=None, output='plain'):
         page_url = article.url.page
         text_msg = '[{:5d}] {} ...'.format(processed_count + 1, urllib.unquote(page_url))
         logger.info(text_msg)
-        print >> sys.stderr, text_msg
+        print (sys.stderr, text_msg)
 
     if arguments['--wikitext']:
         with open(arguments['--wikitext']) as f:
@@ -101,7 +101,7 @@ def process_article(article, processed_count=None, output='plain'):
         return "\n".join(map(str, validation.messages))
 
     else:
-        print >> sys.stderr, "Unsupported output: %s" % output
+        print (sys.stderr, "Unsupported output: %s" % output)
         raise
 
 
