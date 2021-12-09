@@ -66,7 +66,7 @@ def pretty_json(article_dict):
     return json.dumps(article_dict, sort_keys=True, indent=4, separators=(',', ': '))
 
 
-def process_article(article, processed_count=None, output='plain'):
+def process_article(article, processed_count=None, output='dict'):
     if processed_count is not None:
         page_url = article.url.page
         text_msg = '[{:5d}] {} ...'.format(processed_count + 1, urllib.unquote(page_url))
@@ -83,7 +83,7 @@ def process_article(article, processed_count=None, output='plain'):
         return {} if output == 'dict' else ""
 
     logger.info('  * wikitext length = {}'.format(len(wikitext)))
-
+    #article._wikitext ='equilibrium#Biology|biological'
     validation = Validation(article, ALL_CHECKERS)
 
     if output == 'dict':

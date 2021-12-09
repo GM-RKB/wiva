@@ -73,5 +73,5 @@ class Message(object):
         if self.end:
             dict_dump['end'] = self.end
 
-        for key, value in dict_dump.iteritems():
+        for key, value in dict_dump.items():
             yield key, value
