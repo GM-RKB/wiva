@@ -63,7 +63,7 @@ class Article(object):
         else:
             self.session = session
 
-    @property
+
     def wikitext(self):
         if self._wikitext is None:
             r = self.session.get(self.url.wikitext_url)
