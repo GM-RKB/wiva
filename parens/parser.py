@@ -1,8 +1,8 @@
 # coding=utf-8
 import logging
 import ply.yacc as yacc
-from parens.result import *
-from parens.lexer import *
+from wiva.parens.result import *
+from wiva.parens.lexer import *
 
 __author__ = 'alistra'
 

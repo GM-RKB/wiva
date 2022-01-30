@@ -1,6 +1,6 @@
 # coding=utf-8
 import re
-from parens.parser import parse
+from wiva.parens.parser import parse
 
 MAX_ACCEPTABLE_WIDTH = 664  # todo: what the value really is?
 
